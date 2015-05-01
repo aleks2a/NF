@@ -1,0 +1,3 @@
+<% standard_opts = "--format junit --out junit_format --format html --out report.html --format rerun --out rerun.txt --no-source --format pretty --require features --tags ~@wip" %>
+
+login: <%= standard_opts %> --tags @login
