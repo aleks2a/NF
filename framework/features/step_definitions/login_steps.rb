@@ -24,6 +24,5 @@ end
 Then(/^I expect to see error "(.*?)"$/) do |message|
   page_actions.wait_for_element_exists(60){signin_screen.errors}
   expect(signin_screen.errors.text).to be == message
-  
 end
 
