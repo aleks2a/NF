@@ -6,25 +6,22 @@ class PageActions
     App.register_page_object(klass)
   end
 
+  def self.element(name, finder)
+    define_method(name) do
+      begin
+        driver.find_element(finder)
+      rescue => e
+        raise e, "#{name} cannot be found using #{finder}"
+      end
+    end
+  end
 
   def wait_for_element_displayed(timeout = 10, &block)
     wait_for(timeout){yield.displayed?}
   end
 
-  def wait_for_element_not_displayed(timeout=10, &block)
-    wait_for(timeout){yield.displayed? == false}
-  end
-
   def wait_for_element_enabled(timeout = 10, &block)
     wait_for(timeout){yield.enabled?}
-  end
-
-  def wait_for_text(timeout = 60, text)
-    wait_for(timeout){driver.page_source.include? text}
-  end
-
-  def wait_until_text_disappear(timeout = 60, text)
-    wait_for(timeout){(driver.page_source.include? text) == false}
   end
 
   def wait_for_element_exists(timeout = 10, &block)

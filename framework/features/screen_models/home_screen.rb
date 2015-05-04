@@ -8,4 +8,4 @@ class HomeScreen < PageActions
     find_element(:css, "span.text")
   end
 
-end
+end 
