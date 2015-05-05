@@ -6,6 +6,7 @@ Bundler.require(:default)
 DEFAULT_DEVICE = 'iPad Air'
 DEFAULT_TIMEOUT = 3600
 
+
 def caps
   { caps:       { deviceName: (ENV['DEVICE'] || DEFAULT_DEVICE),
                   platformName: 'iOS',
