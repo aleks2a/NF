@@ -22,7 +22,6 @@ def launch_driver
   Appium.promote_appium_methods(App)
   Appium.promote_appium_methods(PageActions)
 
-
   i = 0
   app_driver = nil
   until app_driver != nil || i < 5
