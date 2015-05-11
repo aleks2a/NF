@@ -1,10 +1,14 @@
-Given(/^I launch my device with Netflix page$/) do
+Given(/^I launch my device with Distil Networks page$/) do
   launch_driver
   home_screen.get_home
 end
 
-Then(/^I press on Signin button in header section$/) do
-  page_actions.wait_for_element_exists(60){home_screen.sign_in}
+And(/^I press on expand menu button$/) do
+  home_screen.expand_menu.click
+end
+
+Then(/^I press on Signin button$/) do
+  page_actions.wait_for_element_displayed(60){home_screen.sign_in}
   home_screen.sign_in.click
 end
 
@@ -22,7 +26,7 @@ When(/^I press on SignIn on login page$/) do
 end
 
 Then(/^I expect to see error "(.*?)"$/) do |message|
-  # page_actions.wait_for_element_exists(60){signin_screen.errors}
-  # expect(signin_screen.errors.text).to be == message
+  page_actions.wait_for_element_exists(60){signin_screen.errors}
+  expect(signin_screen.errors.text).to be == message
 end
 

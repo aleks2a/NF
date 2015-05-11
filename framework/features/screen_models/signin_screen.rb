@@ -2,10 +2,12 @@ class SigninScreen < PageActions
 
   element :email_field,     id: "email"
   element :password_field,  id: "password"
-  element :signin_btn,      id: "login-form-contBtn"
-  element :errors,          id: "aerrors"
+  element :signin_btn,      id: "signIn"
 
 
+  def errors
+    find_element(css: "div.alert.alert-danger").find_element(:tag_name, "p")
+  end
 
   # def email_field
   #   find_element(:id, "email")

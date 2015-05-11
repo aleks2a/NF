@@ -13,7 +13,6 @@ def caps
                   platformVersion: (ENV['SDK'] || '8.1'),
                   orientation: 'portrait',
                   newCommandTimeout: '36000',
-                  # safariInitialUrl: 'https://www.netflix.com',
                   browserName: 'Safari'
                   }}
 end
