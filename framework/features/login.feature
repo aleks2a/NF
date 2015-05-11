@@ -8,7 +8,7 @@ Feature: Login functionality
     And I type email "<login>" on login page
     And T type password "<password>" on login page
     When I press on SignIn on login page
-    Then I expect to see error "Invalid credentials.1"
+    Then I expect to see error "Invalid credentials."
   Examples:
     | login               | password |
     | notexists@aaa.com   | qweqwe   |
