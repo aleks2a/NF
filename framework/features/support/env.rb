@@ -38,10 +38,7 @@ def launch_driver
   start_driver
 end
 
-
 World { App.new }
-
-
 
 
 After do |scenario|
