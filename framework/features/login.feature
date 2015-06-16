@@ -12,4 +12,11 @@ Feature: Login functionality
   Examples:
     | login               | password |
     | notexists@aaa.com   | qweqwe   |
-    | 111                 | 222      |
+#    | 111                 | 222      |
+
+
+
+  Scenario: Error message shown when user using incorrect credentials
+    Given I launch my device with JutIO page
+    And I press on expand menu button
+    Then I press on Login button
